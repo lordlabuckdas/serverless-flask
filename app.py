@@ -4,7 +4,7 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 USERS_TABLE = os.environ['USERS_TABLE']
-client = boto3.client('dynamodb')
+client = boto3.client('dynamodb', region_name='us-east-1')
 
 @app.route("/")
 def hello():

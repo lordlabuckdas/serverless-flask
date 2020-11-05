@@ -4,7 +4,16 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 USERS_TABLE = os.environ['USERS_TABLE']
-client = boto3.client('dynamodb', region_name='us-east-1')
+IS_OFFLINE = os.environ['IS_OFFLINE']
+
+if IS_OFFLINE:
+    client = boto3.client(
+        'dynamodb',
+        region_name='localhost',
+        endpoint_url='http://localhost:8000'
+    )
+else:
+    client = boto3.client('dynamodb', region_name='us-east-1')
 
 @app.route("/")
 def hello():

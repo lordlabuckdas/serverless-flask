@@ -1,4 +1,6 @@
-.serverless/
-.vscode/
-node_modules/
-venv/
+.serverless
+.vscode
+node_modules
+venv
+.dynamodb
+

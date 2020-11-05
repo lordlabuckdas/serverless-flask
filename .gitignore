@@ -1,4 +1,4 @@
-.serverles
-.vscode
-node_module
-venv
+.serverless/
+.vscode/
+node_modules/
+venv/

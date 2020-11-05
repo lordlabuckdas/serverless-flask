@@ -13,6 +13,8 @@ custom:
   pythonRequirements:
     dockerizePip: non-linux
   dynamodb:
+    stages:
+      - ${self:provider.stage}
     start:
       migrate: true
 
